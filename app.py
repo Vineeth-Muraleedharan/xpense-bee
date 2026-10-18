@@ -284,7 +284,7 @@ def sign_up_form():
             st.error(str(e))
     st.markdown('<div class="or">or</div>', unsafe_allow_html=True)
     google_button("g_signup")
-    st.caption("You add your age, job, salary and starting balance later, under Settings.")
+   
 
 
 def auth_screen(profile: dict | None):
