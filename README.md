@@ -1,4 +1,4 @@
-# Xpense Bee (Streamlit edition)
+# Xpense Bee 
 
 A personal finance tracker (working name: Xpense Bee) you run on your own computer: income and expenses, a bank-style statement with running balance, insight charts, and payment reminders with a calendar file. Everything is stored in a local SQLite file. The repository holds **synthetic demo data only**.
 
