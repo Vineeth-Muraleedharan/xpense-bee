@@ -1,0 +1,7 @@
+data/*.db
+data/*.db-journal
+__pycache__/
+.pytest_cache/
+.venv/
+tracker.db
+.streamlit/secrets.toml
