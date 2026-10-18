@@ -1,15 +1,18 @@
 # Xpense Bee 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://xpense-bee-by-vineeth.streamlit.app/)
 
-A personal finance tracker (working name: Xpense Bee) you run on your own computer: income and expenses, a bank-style statement with running balance, insight charts, and payment reminders with a calendar file. Everything is stored in a local SQLite file. The repository holds **synthetic demo data only**.
+**Live demo: https://xpense-bee-by-vineeth.streamlit.app/** - try it with the built-in demo data, no sign-up needed.
+
+A personal finance tracker (Xpense Bee) you run on your own computer: income and expenses, a bank-style statement with running balance, insight charts, and payment reminders with a calendar file. Everything is stored in a local SQLite file. The repository holds **synthetic demo data only**.
 
 ## Features
 
-- **Sign in**: create a local account (email and password) or explore with demo data; Home greets you by name. Sign out is in Settings.
+- **Sign up and sign in**: the card-style sign-up asks only for name, email and password (or Continue with Google). Home greets you by name. Add age, sex, job, salary and your starting balance later under Settings. Sign out is at the top of Settings.
 - **Look**: pure black with a faint honeycomb background; the card has a honeycomb on its right side fading to the left, a small bee logo, and this month's income and expenses.
 - **Home**: your profile on a card, available balance with a show/hide control, "Add income" (Salary, Freelance, Others with a note), upcoming payments, recent activity.
 - **Expense**: quick-access category buttons (EMI, Loan, Gym, Shopping, Rent, Bills, Education, Subscription, Food and more), quick-access buttons open an add dialog with that category preselected, recent expenses, and an all-expenses list you can sort and filter by category, payment mode and amount range (0-20, 21-50, 51-100, 101-500, 501-2500, 2501-10000, 10000+).
-- **Insight**: a calendar at the top - pick a day or a month and every chart, total and PDF follows that period (also lists payment reminders, with a `.ics` download). Charts: daily spending area chart, category donut, balance line, monthly income vs spending columns, histogram of expense sizes, payment-method bars. Download the report as PDF.
-- **Statement**: Debit and Credit columns (credit green, debit red), grouped by month with a month separator, filter all/credit/debit, balance after each entry. Download as PDF.
+- **Insight**: a calendar at the top - a dropdown that shrinks once you pick a day or a month, and every chart, total and PDF follows that period (there is also a Compare months section for side-by-side spending by category, and payment reminders, with a `.ics` download). Charts: daily spending area chart, category donut, balance line, monthly income vs spending columns, histogram of expense sizes, payment-method bars. Download the report as PDF.
+- **Statement**: each entry shows its date and time (like "18 Oct 14:32"; set in the add and edit forms, default now), with Debit and Credit columns (credit green, debit red), grouped by month with a month separator, filter all/credit/debit, balance after each entry. Download as PDF.
 - **Settings**: profile, opening balance, credit-card handling, CSV export, demo data.
 
 ## Run it
@@ -22,6 +25,10 @@ streamlit run app.py
 ```
 
 Open the **Set up** screen, enter your name and exact bank balance, or press "explore with demo data". Run the tests with `pytest`.
+
+## Continue with Google (optional)
+
+Google sign-in needs your own Google OAuth client, so the button stays disabled until you add one. Copy `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml`, fill in the client ID and secret (steps are in the file), and run `pip install -r requirements.txt` again so Authlib is installed. The first Google account to sign in becomes the profile for this computer; other accounts are refused.
 
 ## How the balance works
 
